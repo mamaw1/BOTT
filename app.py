@@ -1,0 +1,1 @@
+from flask import Flask, request, jsonify\n\napp = Flask(__name__)\n\n@app.route('/webhook', methods=['POST'])\ndef webhook():\n    data = request.json\n    # Handle the AutoResponder webhook request here\n    return jsonify({'status': 'success'}), 200\n\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)
